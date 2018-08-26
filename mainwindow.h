@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <stdint.h>
+#include "PatientManager.h"
+#include "Patient.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,8 +21,14 @@ public:
 private slots:
 
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    PatientManager m_patientManager;
+    uint32_t m_patientIDCount;
+
+    void initializeWidgets();
 };
 
 #endif // MAINWINDOW_H

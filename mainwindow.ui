@@ -27,32 +27,35 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Patient Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Add Patient</string>
+    </property>
+   </widget>
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>9</x>
       <y>90</y>
-      <width>371</width>
+      <width>381</width>
       <height>211</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="1">
-      <widget class="QPlainTextEdit" name="patientIDTextBox">
-       <property name="tabChangesFocus">
-        <bool>false</bool>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-       <property name="tabStopWidth">
-        <number>0</number>
-       </property>
-       <property name="backgroundVisible">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
@@ -70,16 +73,6 @@
        </property>
        <property name="textFormat">
         <enum>Qt::AutoText</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPlainTextEdit" name="nameTextBox">
-       <property name="tabChangesFocus">
-        <bool>true</bool>
-       </property>
-       <property name="tabStopWidth">
-        <number>0</number>
        </property>
       </widget>
      </item>
@@ -113,16 +106,6 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QPlainTextEdit" name="dateOfBirthTextBox">
-       <property name="tabChangesFocus">
-        <bool>true</bool>
-       </property>
-       <property name="tabStopWidth">
-        <number>0</number>
-       </property>
-      </widget>
-     </item>
      <item row="5" column="0">
       <widget class="QLabel" name="label_5">
        <property name="text">
@@ -130,16 +113,6 @@
        </property>
        <property name="textFormat">
         <enum>Qt::AutoText</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QPlainTextEdit" name="textBox_5">
-       <property name="tabChangesFocus">
-        <bool>true</bool>
-       </property>
-       <property name="tabStopWidth">
-        <number>0</number>
        </property>
       </widget>
      </item>
@@ -153,8 +126,41 @@
        </property>
       </widget>
      </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="patientSexComboBox"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QTextEdit" name="patientNameTextBox">
+       <property name="tabChangesFocus">
+        <bool>true</bool>
+       </property>
+       <property name="tabStopWidth">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QTextEdit" name="patientDateOfBirthTextBox">
+       <property name="tabChangesFocus">
+        <bool>true</bool>
+       </property>
+       <property name="tabStopWidth">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
      <item row="4" column="1">
-      <widget class="QPlainTextEdit" name="addressTextBox">
+      <widget class="QTextEdit" name="patientAddressTextBox">
+       <property name="tabChangesFocus">
+        <bool>true</bool>
+       </property>
+       <property name="tabStopWidth">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QTextEdit" name="patientSocialTextBox">
        <property name="tabChangesFocus">
         <bool>true</bool>
        </property>
@@ -164,7 +170,7 @@
       </widget>
      </item>
      <item row="6" column="1">
-      <widget class="QPlainTextEdit" name="textBox_6">
+      <widget class="QTextEdit" name="patientPhoneTextBox">
        <property name="tabChangesFocus">
         <bool>true</bool>
        </property>
@@ -173,8 +179,18 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QComboBox" name="sexComboBox"/>
+     <item row="0" column="1">
+      <widget class="QTextEdit" name="patientIDTextBox">
+       <property name="tabChangesFocus">
+        <bool>true</bool>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="tabStopWidth">
+        <number>0</number>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -183,12 +199,12 @@
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
   <tabstop>patientIDTextBox</tabstop>
-  <tabstop>nameTextBox</tabstop>
-  <tabstop>sexComboBox</tabstop>
-  <tabstop>dateOfBirthTextBox</tabstop>
-  <tabstop>addressTextBox</tabstop>
-  <tabstop>textBox_5</tabstop>
-  <tabstop>textBox_6</tabstop>
+  <tabstop>patientNameTextBox</tabstop>
+  <tabstop>patientSexComboBox</tabstop>
+  <tabstop>patientDateOfBirthTextBox</tabstop>
+  <tabstop>patientAddressTextBox</tabstop>
+  <tabstop>patientSocialTextBox</tabstop>
+  <tabstop>patientPhoneTextBox</tabstop>
  </tabstops>
  <resources/>
  <connections/>
