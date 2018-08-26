@@ -30,25 +30,15 @@
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>9</x>
       <y>90</y>
-      <width>361</width>
+      <width>371</width>
       <height>211</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_7">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Patient ID : &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::AutoText</enum>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="1">
-      <widget class="QPlainTextEdit" name="textBox_7">
+      <widget class="QPlainTextEdit" name="patientIDTextBox">
        <property name="tabChangesFocus">
         <bool>false</bool>
        </property>
@@ -59,7 +49,7 @@
         <number>0</number>
        </property>
        <property name="backgroundVisible">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -73,8 +63,18 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Patient ID : &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::AutoText</enum>
+       </property>
+      </widget>
+     </item>
      <item row="1" column="1">
-      <widget class="QPlainTextEdit" name="textBox">
+      <widget class="QPlainTextEdit" name="nameTextBox">
        <property name="tabChangesFocus">
         <bool>true</bool>
        </property>
@@ -93,16 +93,6 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QPlainTextEdit" name="textBox_2">
-       <property name="tabChangesFocus">
-        <bool>true</bool>
-       </property>
-       <property name="tabStopWidth">
-        <number>0</number>
-       </property>
-      </widget>
-     </item>
      <item row="3" column="0">
       <widget class="QLabel" name="label_3">
        <property name="text">
@@ -110,16 +100,6 @@
        </property>
        <property name="textFormat">
         <enum>Qt::AutoText</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QPlainTextEdit" name="textBox_3">
-       <property name="tabChangesFocus">
-        <bool>true</bool>
-       </property>
-       <property name="tabStopWidth">
-        <number>0</number>
        </property>
       </widget>
      </item>
@@ -133,8 +113,8 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
-      <widget class="QPlainTextEdit" name="textBox_4">
+     <item row="3" column="1">
+      <widget class="QPlainTextEdit" name="dateOfBirthTextBox">
        <property name="tabChangesFocus">
         <bool>true</bool>
        </property>
@@ -173,6 +153,16 @@
        </property>
       </widget>
      </item>
+     <item row="4" column="1">
+      <widget class="QPlainTextEdit" name="addressTextBox">
+       <property name="tabChangesFocus">
+        <bool>true</bool>
+       </property>
+       <property name="tabStopWidth">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
      <item row="6" column="1">
       <widget class="QPlainTextEdit" name="textBox_6">
        <property name="tabChangesFocus">
@@ -183,11 +173,23 @@
        </property>
       </widget>
      </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="sexComboBox"/>
+     </item>
     </layout>
    </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>patientIDTextBox</tabstop>
+  <tabstop>nameTextBox</tabstop>
+  <tabstop>sexComboBox</tabstop>
+  <tabstop>dateOfBirthTextBox</tabstop>
+  <tabstop>addressTextBox</tabstop>
+  <tabstop>textBox_5</tabstop>
+  <tabstop>textBox_6</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
