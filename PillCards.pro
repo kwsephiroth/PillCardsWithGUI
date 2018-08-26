@@ -25,10 +25,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    Drug.cpp \
+    Helpers.cpp \
+    Patient.cpp \
+    PatientManager.cpp \
+    PillCard.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    Drug.h \
+    Enums.h \
+    Helpers.h \
+    Patient.h \
+    PatientManager.h \
+    PillCard.h \
+    Structs.h
 
 FORMS += \
         mainwindow.ui
