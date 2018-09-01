@@ -24,7 +24,6 @@ private:
 
 public:
     Patient(const PatientInfo info, PillCard&& card) : m_patientInfo(info), m_pillCard(std::make_unique<PillCard>(std::forward<PillCard>(card))) {}
-    Patient(const PatientInfo info) : m_patientInfo(info){}
 	Patient()=default;//TODO: Default constructor for creating a blank patient. Should I keep this?
 	~Patient()=default;
 
@@ -43,7 +42,8 @@ public:
 	Date GetDateOfBirth() const { return this->m_patientInfo.dateOfBirth; }
 	std::string GetAddress() const { return this->m_patientInfo.address; }
 	SocialSecurityNumber GetSocial() const { return this->m_patientInfo.social; }
-	PhoneNumber GetPhone() const { return this->m_patientInfo.phone; }
+    //PhoneNumber GetPhone() const { return this->m_patientInfo.phone; }
+    std::string GetPhone() const { return this->m_patientInfo.phone; }
 	const PillCard& GetPillCard() const { return *this->m_pillCard; }//TODO: Handle case where the pill card pointer is null
 	bool IsBlank() const;
 	//static const Patient BLANK;

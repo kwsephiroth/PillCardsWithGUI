@@ -5,9 +5,9 @@
 
 struct Date
 {
-	uint8_t month;
-	uint8_t day;
-	uint16_t year;
+    int month;
+    int day;
+    int year;
 };
 
 struct PhoneNumber
@@ -32,7 +32,8 @@ struct PatientInfo
 	Date dateOfBirth;
 	std::string address;
 	SocialSecurityNumber social;
-	PhoneNumber phone;
+    //PhoneNumber phone;
+    std::string phone;
 };
 
 struct DrugInfo

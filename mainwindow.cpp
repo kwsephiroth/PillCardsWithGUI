@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_patientIDCount(0)
 {
     ui->setupUi(this);
-    this->initializeWidgets();
+    this->InitializeWidgets();
 }
 
 MainWindow::~MainWindow()
@@ -16,27 +16,91 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::initializeWidgets()
+void MainWindow::InitializeWidgets()
 {
     ui->patientIDTextBox->setText(std::to_string(this->m_patientIDCount).c_str());
     ui->patientSexComboBox->addItems({"Male", "Female"});
+    ui->patientDOBDateEdit->setDate(QDate::currentDate());
+    ui->patientPhoneLineEdit->setInputMask("(000) 000-0000");
+    const QList<QString> abbrevs{//TODO: Read this list from file into memory at startup
+        "AL",
+        "AK",
+        "AZ",
+        "AR",
+        "CA",
+        "CO",
+        "CT",
+        "DE",
+        "FL",
+        "GA",
+        "HI",
+        "ID",
+        "IL",
+        "IN",
+        "IA",
+        "KS",
+        "KY",
+        "LA",
+        "ME",
+        "MD",
+        "MA",
+        "MI",
+        "MN",
+        "MS",
+        "MO",
+        "MT",
+        "NE",
+        "NV",
+        "NH",
+        "NJ",
+        "NM",
+        "NY",
+        "NC",
+        "ND",
+        "OH",
+        "OK",
+        "OR",
+        "PA",
+        "RI",
+        "SC",
+        "SD",
+        "TN",
+        "TX",
+        "UT",
+        "VT",
+        "VA",
+        "WA",
+        "WV",
+        "WI",
+        "WY"
+    };
+    ui->stateAbbreviationComboBox->addItems(abbrevs);
 }
 
-void MainWindow::on_pushButton_clicked()//Temporary test function
+
+void MainWindow::SetPatientInfo(PatientInfo& pi)
+{
+    pi.id = std::stoul(ui->patientIDTextBox->toPlainText().toStdString());
+    pi.name = ui->patientNameTextBox->toPlainText().toStdString();
+    pi.sex = ui->patientSexComboBox->currentText() == "Male" ? 'M' : 'F';
+
+    pi.dateOfBirth =
+    {
+        ui->patientDOBDateEdit->date().month(),
+        ui->patientDOBDateEdit->date().day(),
+        ui->patientDOBDateEdit->date().year()
+    };
+
+    pi.phone = ui->patientPhoneLineEdit->text().toStdString();
+}
+
+void MainWindow::on_addPatientPushButton_clicked()
 {
     this->m_patientIDCount++;
     ui->patientIDTextBox->setText(std::to_string(this->m_patientIDCount).c_str());
     PatientInfo pi;
-    pi.name = ui->patientNameTextBox->toPlainText().toStdString();
+    this->SetPatientInfo(pi);
     PillCard pc;
-    //Patient p(pi);
     Patient p(pi, std::move(pc));
     std::cout << p << std::endl;
-
-    qDebug() << "'Add Patient' Button clicked!";
-
-    if(!pi.name.empty() && pi.name[0] != ' ')
-    {
-        qDebug() << "Patient name entered : " << pi.name.c_str();
-    }
 }

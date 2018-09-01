@@ -19,16 +19,15 @@ public:
     ~MainWindow();
 
 private slots:
-
-
-    void on_pushButton_clicked();
+    void on_addPatientPushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     PatientManager m_patientManager;
     uint32_t m_patientIDCount;
 
-    void initializeWidgets();
+    void InitializeWidgets();
+    void SetPatientInfo(PatientInfo& pi);
 };
 
 #endif // MAINWINDOW_H
