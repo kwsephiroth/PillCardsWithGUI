@@ -28,9 +28,10 @@ void MainWindow::on_pushButton_clicked()//Temporary test function
     ui->patientIDTextBox->setText(std::to_string(this->m_patientIDCount).c_str());
     PatientInfo pi;
     pi.name = ui->patientNameTextBox->toPlainText().toStdString();
-    //PillCard pc;
-    //Patient p(pi, std::move(pc));
-    //std::cout << p << std::endl;
+    PillCard pc;
+    //Patient p(pi);
+    Patient p(pi, std::move(pc));
+    std::cout << p << std::endl;
 
     qDebug() << "'Add Patient' Button clicked!";
 

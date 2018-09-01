@@ -23,7 +23,8 @@ private:
 	std::unique_ptr<PillCard> m_pillCard = nullptr;
 
 public:
-	Patient(const PatientInfo info, PillCard&& card) : m_patientInfo(info), m_pillCard(std::make_unique<PillCard>(std::forward<PillCard>(card))) {}
+    Patient(const PatientInfo info, PillCard&& card) : m_patientInfo(info), m_pillCard(std::make_unique<PillCard>(std::forward<PillCard>(card))) {}
+    Patient(const PatientInfo info) : m_patientInfo(info){}
 	Patient()=default;//TODO: Default constructor for creating a blank patient. Should I keep this?
 	~Patient()=default;
 
