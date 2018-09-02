@@ -97,6 +97,7 @@ void MainWindow::SetPatientInfo(PatientInfo& pi)
                    ui->patientCityTextBox->toPlainText().toStdString() + ", " +
                    ui->patientStateComboBox->currentText().toStdString() + " " +
                    ui->patientZipTextBox->toPlainText().toStdString());
+
 }
 
 void MainWindow::on_addPatientPushButton_clicked()
