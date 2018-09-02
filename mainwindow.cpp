@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::InitializeWidgets()
 {
-    ui->patientIDTextBox->setText(std::to_string(this->m_patientIDCount).c_str());
+    //ui->patientIDTextBox->setText(std::to_string(this->m_patientIDCount).c_str());
     ui->patientSexComboBox->addItems({"Male", "Female"});
     ui->patientDOBDateEdit->setDate(QDate::currentDate());
     ui->patientPhoneLineEdit->setInputMask("(000) 000-0000");
@@ -74,13 +74,14 @@ void MainWindow::InitializeWidgets()
         "WI",
         "WY"
     };
-    ui->stateAbbreviationComboBox->addItems(abbrevs);
+    ui->patientStateComboBox->addItems(abbrevs);
 }
 
 
 void MainWindow::SetPatientInfo(PatientInfo& pi)
 {
-    pi.id = std::stoul(ui->patientIDTextBox->toPlainText().toStdString());
+    //pi.id = std::stoul(ui->patientIDTextBox->toPlainText().toStdString());
+    pi.id = this->m_patientIDCount;
     pi.name = ui->patientNameTextBox->toPlainText().toStdString();
     pi.sex = ui->patientSexComboBox->currentText() == "Male" ? 'M' : 'F';
 
@@ -92,12 +93,16 @@ void MainWindow::SetPatientInfo(PatientInfo& pi)
     };
 
     pi.phone = ui->patientPhoneLineEdit->text().toStdString();
+    pi.address = (ui->patientAddressTextBox->toPlainText().toStdString() + ", " +
+                   ui->patientCityTextBox->toPlainText().toStdString() + ", " +
+                   ui->patientStateComboBox->currentText().toStdString() + " " +
+                   ui->patientZipTextBox->toPlainText().toStdString());
 }
 
 void MainWindow::on_addPatientPushButton_clicked()
 {
     this->m_patientIDCount++;
-    ui->patientIDTextBox->setText(std::to_string(this->m_patientIDCount).c_str());
+    //ui->patientIDTextBox->setText(std::to_string(this->m_patientIDCount).c_str());
     PatientInfo pi;
     this->SetPatientInfo(pi);
     PillCard pc;
